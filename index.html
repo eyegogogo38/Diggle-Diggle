@@ -1,16 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko">
-
-<head>
+<html lang="ko"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Diggle Diggle - 귀여운 두더지 디굴이와 함께하는 땅 속 모험!">
     <title>Diggle Diggle 🐹 디글디글</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Outfit:wght@400;600;700;800&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&amp;family=Outfit:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
     <script>
@@ -22,8 +18,38 @@
             });
         }
     </script>
-</head>
-
+<style>
+    .shake {
+        animation: shake 0.5s ease-in-out;
+    }
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        20%, 60% { transform: translateX(-5px); }
+        40%, 80% { transform: translateX(5px); }
+    }
+</style><style id="mole-intro-styles">
+            .mole-sprite.intro-digging {
+                animation: digBounce 0.5s ease-in-out infinite;
+            }
+            @keyframes digBounce {
+                0%, 100% { transform: translateY(0) rotate(-5deg); }
+                50% { transform: translateY(-10px) rotate(5deg); }
+            }
+            .dirt-particles-anim {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100px;
+                height: 30px;
+                background: radial-gradient(ellipse, #5C4023 0%, transparent 70%);
+                animation: dirtSpray 0.3s ease-out infinite;
+            }
+            @keyframes dirtSpray {
+                0% { opacity: 0.8; transform: translateX(-50%) scale(1); }
+                100% { opacity: 0; transform: translateX(-50%) scale(1.5) translateY(-20px); }
+            }
+        </style></head>
 <body>
     <div id="intro-screen" class="screen active">
         <div class="intro-container">
@@ -32,11 +58,16 @@
             </div>
             <div class="logo-korean">디글디글</div>
             <div class="mole-digging" id="intro-mole"></div>
-            <div class="tagline">RUN & AVOID!! 🏃‍♂️💨</div>
-            <button class="btn-start pulse" id="btn-start">Start!</button>
+            <div class="tagline">RUN &amp; AVOID!! 🏃‍♂️💨</div>
+            <div class="intro-buttons">
+                <button class="btn-start pulse" id="btn-start">Start!</button>
+                <div class="extra-buttons">
+                    <button id="btn-install" class="btn-sub hidden">📲 App Install</button>
+                    <a href="https://github.com/eyegogogo38/Diggle-Diggle/archive/refs/heads/main.zip" class="btn-sub">💾 Download ZIP</a>
+                </div>
+            </div>
         </div>
     </div>
-
     <div id="character-intro" class="screen">
         <div class="underground-bg"></div>
         <div class="character-showcase">
@@ -49,7 +80,6 @@
         </div>
         <button class="btn-continue" id="btn-continue">Continue →</button>
     </div>
-
     <div id="ranking-screen" class="screen">
         <div class="ranking-container">
             <h1 class="ranking-title">🏆 Hall of Fame 🏆</h1>
@@ -75,7 +105,6 @@
             </div>
         </div>
     </div>
-
     <div id="game-screen" class="screen">
         <div class="game-header">
             <div class="header-left">
@@ -90,7 +119,7 @@
                 <div class="ammo-display"><span>🌰</span><span id="ammo-count">30</span></div>
             </div>
         </div>
-        <canvas id="game-canvas"></canvas>
+        <canvas id="game-canvas" width="800" height="600"></canvas>
         <div id="freeze-overlay" class="freeze-overlay hidden">
             <div class="freeze-text">❄️ ALL ENEMIES FROZEN! ❄️</div>
         </div>
@@ -98,7 +127,6 @@
             <span>⬅️➡️⬆️⬇️ Move</span><span>SPACE Shoot</span><span>Z Dig</span>
         </div>
     </div>
-
     <div id="stage-complete" class="screen">
         <div class="complete-container">
             <h1>🎉 Stage Complete! 🎉</h1>
@@ -110,7 +138,6 @@
             <button class="btn-next-stage" id="btn-next">Next Stage →</button>
         </div>
     </div>
-
     <div id="game-over" class="screen">
         <div class="gameover-container">
             <h1 class="gameover-title">Game Over</h1>
@@ -124,15 +151,11 @@
             </div>
         </div>
     </div>
-
     <div id="boss-screen" class="screen">
         <div class="boss-warning">
             <h1>⚠️ BOSS INCOMING! ⚠️</h1>
             <div class="boss-name">대왕 멧돼지</div>
         </div>
     </div>
-
     <script src="game.js"></script>
-</body>
-
-</html>
+</body></html>

@@ -1,11 +1,16 @@
-<!DOCTYPE html><html lang="ko"><head>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Diggle Diggle - 귀여운 두더지 디굴이와 함께하는 땅 속 모험!">
     <title>Diggle Diggle 🐹 디글디글</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&amp;family=Outfit:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
     <script>
@@ -17,16 +22,8 @@
             });
         }
     </script>
-<style>
-    .shake {
-        animation: shake 0.5s ease-in-out;
-    }
-    @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        20%, 60% { transform: translateX(-5px); }
-        40%, 80% { transform: translateX(5px); }
-    }
-</style></head>
+</head>
+
 <body>
     <div id="intro-screen" class="screen active">
         <div class="intro-container">
@@ -35,16 +32,11 @@
             </div>
             <div class="logo-korean">디글디글</div>
             <div class="mole-digging" id="intro-mole"></div>
-            <div class="tagline">RUN &amp; AVOID!! 🏃‍♂️💨</div>
-            <div class="intro-buttons">
-                <button class="btn-start pulse" id="btn-start">Start!</button>
-                <div class="extra-buttons">
-                    <button id="btn-install" class="btn-sub hidden">📲 App Install</button>
-                    <a href="https://github.com/eyegogogo38/Diggle-Diggle/archive/refs/heads/main.zip" class="btn-sub">💾 Download ZIP</a>
-                </div>
-            </div>
+            <div class="tagline">RUN & AVOID!! 🏃‍♂️💨</div>
+            <button class="btn-start pulse" id="btn-start">Start!</button>
         </div>
     </div>
+
     <div id="character-intro" class="screen">
         <div class="underground-bg"></div>
         <div class="character-showcase">
@@ -57,6 +49,7 @@
         </div>
         <button class="btn-continue" id="btn-continue">Continue →</button>
     </div>
+
     <div id="ranking-screen" class="screen">
         <div class="ranking-container">
             <h1 class="ranking-title">🏆 Hall of Fame 🏆</h1>
@@ -64,7 +57,7 @@
                 <div class="ranking-header">
                     <span>Rank</span><span>Player</span><span>Score</span><span>Stage</span>
                 </div>
-                <div id="ranking-list" class="ranking-list"></div>
+                <div class="ranking-list" id="ranking-list"></div>
             </div>
             <div class="login-section">
                 <h2>🐹 Please insert your name and password! 🐹</h2>
@@ -82,21 +75,22 @@
             </div>
         </div>
     </div>
+
     <div id="game-screen" class="screen">
         <div class="game-header">
             <div class="header-left">
                 <div class="stage-info"><span class="stage-label">STAGE</span><span id="stage-number">1</span></div>
-                <div id="lives-container" class="lives-container"></div>
+                <div class="lives-container" id="lives-container"></div>
             </div>
             <div class="header-center">
-                <div id="golden-pouches" class="golden-pouches"></div>
+                <div class="golden-pouches" id="golden-pouches"></div>
             </div>
             <div class="header-right">
                 <div class="score-display"><span class="score-label">SCORE</span><span id="score-value">0</span></div>
                 <div class="ammo-display"><span>🌰</span><span id="ammo-count">30</span></div>
             </div>
         </div>
-        <canvas id="game-canvas" width="800" height="600"></canvas>
+        <canvas id="game-canvas"></canvas>
         <div id="freeze-overlay" class="freeze-overlay hidden">
             <div class="freeze-text">❄️ ALL ENEMIES FROZEN! ❄️</div>
         </div>
@@ -104,6 +98,7 @@
             <span>⬅️➡️⬆️⬇️ Move</span><span>SPACE Shoot</span><span>Z Dig</span>
         </div>
     </div>
+
     <div id="stage-complete" class="screen">
         <div class="complete-container">
             <h1>🎉 Stage Complete! 🎉</h1>
@@ -115,6 +110,7 @@
             <button class="btn-next-stage" id="btn-next">Next Stage →</button>
         </div>
     </div>
+
     <div id="game-over" class="screen">
         <div class="gameover-container">
             <h1 class="gameover-title">Game Over</h1>
@@ -128,11 +124,15 @@
             </div>
         </div>
     </div>
+
     <div id="boss-screen" class="screen">
         <div class="boss-warning">
             <h1>⚠️ BOSS INCOMING! ⚠️</h1>
             <div class="boss-name">대왕 멧돼지</div>
         </div>
     </div>
+
     <script src="game.js"></script>
-</body></html>
+</body>
+
+</html>

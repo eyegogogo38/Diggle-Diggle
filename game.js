@@ -185,8 +185,8 @@ function createIntroMole() {
                 <circle cx="62" cy="50" r="3.5" fill="#222"/>
                 
                 <!-- === 코 === -->
-                <ellipse cx="50" cy="62" rx="9" ry="7" fill="#FFAAAA"/>
-                <ellipse cx="50" cy="63" rx="6" ry="4" fill="#FF8888" opacity="0.6"/>
+                <ellipse cx="50" cy="62" rx="4.5" ry="3.5" fill="#FFAAAA"/>
+                <ellipse cx="50" cy="63" rx="3" ry="2" fill="#FF8888" opacity="0.6"/>
                 
                 <!-- === 입 === -->
                 <path d="M 44 72 Q 47 76 50 72 Q 53 76 56 72" stroke="#8B6914" stroke-width="2.5" fill="none" stroke-linecap="round"/>
@@ -1200,7 +1200,7 @@ function drawPlayer() {
     // === 코 (분홍빛 둥근 코) ===
     ctx.fillStyle = '#FFAAAA';
     ctx.beginPath();
-    ctx.ellipse(width / 2, height * 0.48, 9, 7, 0, 0, Math.PI * 2);
+    ctx.ellipse(width / 2, height * 0.48, 4.5, 3.5, 0, 0, Math.PI * 2);
     ctx.fill();
     ctx.fillStyle = '#FF8888';
     ctx.globalAlpha = 0.5;
@@ -1470,4 +1470,5 @@ shakeStyle.textContent = `
     }
 `;
 document.head.appendChild(shakeStyle);
+
 

@@ -1470,3 +1470,4 @@ shakeStyle.textContent = `
     }
 `;
 document.head.appendChild(shakeStyle);
+

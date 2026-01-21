@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Diggle Diggle - 귀여운 두더지 디굴이와 함께하는 땅 속 모험!">
+    <title>Diggle Diggle 🐹 디글디글</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker Registered'))
+                    .catch(err => console.log('Service Worker Registration Failed', err));
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="intro-screen" class="screen active">
+        <div class="intro-container">
+            <div class="logo-wrapper">
+                <div class="logo-text" id="logo-text"></div>
+            </div>
+            <div class="logo-korean">디글디글</div>
+            <div class="mole-digging" id="intro-mole"></div>
+            <div class="tagline">RUN & AVOID!! 🏃‍♂️💨</div>
+            <button class="btn-start pulse" id="btn-start">Start!</button>
+        </div>
+    </div>
+
+    <div id="character-intro" class="screen">
+        <div class="underground-bg"></div>
+        <div class="character-showcase">
+            <div class="digul-hero" id="digul-hero"></div>
+            <div class="intro-text">
+                <h2>Meet Digul!</h2>
+                <p>우리의 귀여운 두더지 <strong>디굴이</strong>를 만나보세요!</p>
+                <p class="small">땅 속에서 자원을 모으고 살쾡이들을 피해 겨울을 준비해요! 🌰</p>
+            </div>
+        </div>
+        <button class="btn-continue" id="btn-continue">Continue →</button>
+    </div>
+
+    <div id="ranking-screen" class="screen">
+        <div class="ranking-container">
+            <h1 class="ranking-title">🏆 Hall of Fame 🏆</h1>
+            <div class="ranking-board">
+                <div class="ranking-header">
+                    <span>Rank</span><span>Player</span><span>Score</span><span>Stage</span>
+                </div>
+                <div class="ranking-list" id="ranking-list"></div>
+            </div>
+            <div class="login-section">
+                <h2>🐹 Please insert your name and password! 🐹</h2>
+                <div class="input-group">
+                    <div class="input-wrapper">
+                        <label for="player-name">Name</label>
+                        <input type="text" id="player-name" placeholder="Enter your name..." maxlength="12">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="player-password">Password</label>
+                        <input type="password" id="player-password" placeholder="Enter password..." maxlength="16">
+                    </div>
+                </div>
+                <button class="btn-play" id="btn-play">🎮 LET'S DIG! 🎮</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="game-screen" class="screen">
+        <div class="game-header">
+            <div class="header-left">
+                <div class="stage-info"><span class="stage-label">STAGE</span><span id="stage-number">1</span></div>
+                <div class="lives-container" id="lives-container"></div>
+            </div>
+            <div class="header-center">
+                <div class="golden-pouches" id="golden-pouches"></div>
+            </div>
+            <div class="header-right">
+                <div class="score-display"><span class="score-label">SCORE</span><span id="score-value">0</span></div>
+                <div class="ammo-display"><span>🌰</span><span id="ammo-count">30</span></div>
+            </div>
+        </div>
+        <canvas id="game-canvas"></canvas>
+        <div id="freeze-overlay" class="freeze-overlay hidden">
+            <div class="freeze-text">❄️ ALL ENEMIES FROZEN! ❄️</div>
+        </div>
+        <div class="game-footer">
+            <span>⬅️➡️⬆️⬇️ Move</span><span>SPACE Shoot</span><span>Z Dig</span>
+        </div>
+    </div>
+
+    <div id="stage-complete" class="screen">
+        <div class="complete-container">
+            <h1>🎉 Stage Complete! 🎉</h1>
+            <div class="stage-stats">
+                <div class="stat-item"><span>적군 처치</span><span id="enemies-defeated">0</span></div>
+                <div class="stat-item"><span>자원 수집</span><span id="resources-collected">0</span></div>
+                <div class="stat-item"><span>점수</span><span id="stage-score">0</span></div>
+            </div>
+            <button class="btn-next-stage" id="btn-next">Next Stage →</button>
+        </div>
+    </div>
+
+    <div id="game-over" class="screen">
+        <div class="gameover-container">
+            <h1 class="gameover-title">Game Over</h1>
+            <div class="final-stats">
+                <div><span>Final Score</span><span id="final-score">0</span></div>
+                <div><span>Stages Cleared</span><span id="stages-cleared">0</span></div>
+            </div>
+            <div class="gameover-buttons">
+                <button class="btn-retry" id="btn-retry">🔄 Try Again</button>
+                <button class="btn-home" id="btn-home">🏠 Home</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="boss-screen" class="screen">
+        <div class="boss-warning">
+            <h1>⚠️ BOSS INCOMING! ⚠️</h1>
+            <div class="boss-name">대왕 멧돼지</div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>
